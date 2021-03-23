@@ -3,6 +3,8 @@
 int main()
 {
   int x = 5;
-  printf("x = %d\n", x);
+  int y = 6;
+  printf("x = %d\n", x+y);
+  printf("also ti XYI\n");
   return 0;
 }
