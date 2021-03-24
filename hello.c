@@ -1,10 +1,20 @@
 #include "stdio.h"
 
+
 int main()
 {
-  int x = 5;
-  int y = 6;
-  printf("x = %d\n", x+y);
-  printf("also ti XYI\n");
-  return 0;
+    int c = 0;
+    int p = 0;
+    while ((c = getchar()) != EOF)
+    {
+      if(c == ' ')
+        {p++;}
+      else
+        {p=0;}
+
+      if(p<2)
+        putchar(c);
+    }
+    //printf("%s", c);
+    return 0;
 }
