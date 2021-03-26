@@ -19,15 +19,18 @@ int main()
         letter = 0;
       }
     }
-    
-    //printf("word %d;\n", word);
-    for(int i = 0; i<acc[i]; i++)
-    {
-      for(int x=0; x<word; x++)
-      {
-        printf("\n");
+    y = word;
+    for(int i=0; i<word; i++){
+      for(int i = 0; i<acc[i]; i++){
+        if (word-y-acc[i]){
+          printf("*");
+        }else{
+        printf("\\");
+        }
       }
-      printf("*");
+      y--;
+      printf("\n");
     }
+    //printf("word %d;\n", word);
     return 0;
 }
