@@ -1,85 +1,44 @@
-#include "stdio.h"
+#include <stdio.h>
 
 #define MAXLINE 100
+#define NORM 10
 
-int getlin(char line[], int MAX); 
-void copy(char to[], char from[]); 
-void prnt(int, char*);
+int getlin(char line[], int MAX);
+int copy(char to[NORM][MAXLINE], char from[]);
+void prnt(char arr[NORM][MAXLINE], int);
 
-//The program draws a histogram based on the number of words and their length. In the vertical position.
-/*int main()
-{
-    int c = 0;
-    int y = 0;
-    int word = 0;
-    int letter = 0;
-    int acc[100] = {0};
-    int acclet[200] = {0};
-    int longlet = 0;
-    
-    while ((c = getchar()) != '\n')
-    {     
-      letter++; 
-      if(c == ' ')
-      {
-        letter -= 1;
-        acc[word] = letter;        
-          if(longlet < letter){longlet = letter;}
-        word++;
-        letter = 0;
-      }
-    }
-    y = longlet;
-    for(int i=0; i<longlet; i++)
-    {      
-      for(int j=0; j<word; j++)
-      {        
-        if ((y-acc[j]) <= 0)
-        {          
-          printf("*");                   
-        }else{
-          printf(" ");
-        }        
-      }
-      y--;  
-      printf("\n");
-    }
-    //printf("word %d; longlet %d;\n", word, longlet);
-    return 0;
-}
-*/
- 
-/*печать самой длинной строки*/
 
 /* печать самой длинной строки */
 int main()
 {
-	int len; /* длина текущей строки */
-	int max; /* длина максимальной из просмотренных строк */
-	char line[MAXLINE]; /* текущая строка */
-	char longest[MAXLINE]; /* самая длинная строка */
+	int len;
+	int max;
+	int k = 0;
+	int i = 0;
+	char line[MAXLINE];
+	char longest[MAXLINE];
+	char Arm[NORM][MAXLINE];
 	max = 0;	
-
-	//prnt();
 
 	while ((len = getlin(line, MAXLINE)) > 1)
 	{
-//		printf("%d", len);
-		if (len > max)
-		{
-			max = len;
-			copy(longest, line);
+		
+		if ((len - 1) > 10) {
+			k = copy(Arm, line);			
 		}
+		/*while ((Arm[k][i] = line[i]) != '\0')
+			{
+				i++;
+			}
+			k++;
+			i = 0;*/		
 	}	
 
-	//if (max > 0)
-	//	printf("%s", longest);
-	prnt(max, longest);
+	prnt(Arm, k);
 	
 	return 0;
 }
 
-/* getline: читает строку в s, возвращает длину */
 int getlin(char s[], int lim)
 {
 	int c = 0;
@@ -97,18 +56,28 @@ int getlin(char s[], int lim)
 		return i;
 }
 
-/* copy: копирует из 'from' в 'to'; to достаточно большой */
-void copy(char to[], char from[])
+int copy(char to[NORM][MAXLINE], char from[])
 {
-	int i;
-	i = 0;
-	while ((to[i] = from[i]) != '\0')
-		++i;
+	int i = 0;
+	static int k = 0;
+
+	while ((to[k][i] = from[i]) != '\0') {
+		++i;		
+	}
+	k++;
+
+return k;
 }
 
-void prnt(int max, char *longest)
-{
-	if (max > 10)
-	printf("%s", longest);
+void prnt(char arm[NORM][MAXLINE], int p)
+{	
+	int i = 0;
+	for (int k = 0; k < p; k++) {
+		while (arm[k][i] != '\n') {
+			printf("%c", arm[k][i]);
+			i++;
+		}
+		i = 0;
+		printf("\n");
+	}
 }
-
