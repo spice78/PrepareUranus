@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-#define Exit 96
+#define Exit 96 //it is '`'
 
 int main()
 {
