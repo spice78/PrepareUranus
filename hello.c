@@ -1,83 +1,16 @@
-#include <stdio.h>
+#include "stdio.h"
+#include "stdlib.h"
 
-#define MAXLINE 100
-#define NORM 10
+#define Exit 96 // `
+#define DIGIT c>='0' && c<='9'
 
-int getlin(char line[], int MAX);
-int copy(char to[NORM][MAXLINE], char from[]);
-void prnt(char arr[NORM][MAXLINE], int);
-
-
-/* печать самой длинной строки */
 int main()
 {
-	int len;
-	int max;
-	int k = 0;
-	int i = 0;
-	char line[MAXLINE];
-	char longest[MAXLINE];
-	char Arm[NORM][MAXLINE];
-	max = 0;	
-
-	while ((len = getlin(line, MAXLINE)) > 1)
-	{
-		
-		if ((len - 1) > 10) {
-			k = copy(Arm, line);			
-		}
-		/*while ((Arm[k][i] = line[i]) != '\0')
-			{
-				i++;
-			}
-			k++;
-			i = 0;*/		
-	}	
-
-	prnt(Arm, k);
-	
-	return 0;
-}
-
-int getlin(char s[], int lim)
-{
-	int c = 0;
-	int	i;
-	for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
-	{
-		s[i] = c;
+    int c;
+	while((c=getchar())!=Exit){		
+		if(DIGIT){return printf("Digit");}
+		return printf("No digit");		
 	}
-	if (c == '\n')
-	{
-		s[i] = c;
-			++i;
-	}
-	s[i] = '\0';
-		return i;
-}
-
-int copy(char to[NORM][MAXLINE], char from[])
-{
-	int i = 0;
-	static int k = 0;
-
-	while ((to[k][i] = from[i]) != '\0') {
-		++i;		
-	}
-	k++;
-
-return k;
-}
-
-void prnt(char arm[NORM][MAXLINE], int p)
-{	
-	int i = 0;
-	for (int k = 0; k < p; k++) {
-		while (arm[k][i] != '\n') {
-			printf("%c", arm[k][i]);
-			i++;
-		}
-		i = 0;
-		printf("\n");
-	}
+    
+return EXIT_SUCCESS;
 }
