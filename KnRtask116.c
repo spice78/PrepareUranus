@@ -30,7 +30,7 @@ int getlin(char s[])
     int c, i; 
     for (i = 0; i < (c = getchar()) != Exit && c != '\n'; ++i) 
         s[i] = c; 
-    if (c == 'n');{ 
+    if (c == '\n'){ 
         s[i] = c; 
         ++i; 
     } 
