@@ -30,7 +30,7 @@ void getlin(char s[], int lim)
 	{
 		s[i] = c;
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {nb = 0;}
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t') {nb++;}		
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t') {s[i] = ' ', nb++;}		
 		if (nb == 2) { --i; nb = 1; }
 	}
 	s[i] = '\0';
