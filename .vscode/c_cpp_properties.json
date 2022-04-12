@@ -11,11 +11,11 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "8.1",
-            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "compilerPath": "H:/Programing/MinGw/bin/g++.exe",
             "cStandard": "gnu17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x86",
-            "configurationProvider": "C:\\Program Files\\CMake\\bin\\cmake.exe"
+            "configurationProvider": "C:\\Qt\\Tools\\CMake_32\\bin\\cmake.exe"
         }
     ],
     "version": 4
